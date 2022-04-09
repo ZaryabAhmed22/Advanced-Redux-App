@@ -5,7 +5,7 @@ const Products = (props) => {
   const products = [
     {
       id: "1",
-      title: "Test",
+      title: "Book",
       price: 6,
       description: "This is a first product - amazing!",
     },
@@ -23,6 +23,7 @@ const Products = (props) => {
         {products.map((product) => (
           <ProductItem
             key={product.id}
+            id={product.id}
             title={product.title}
             price={product.price}
             description={product.description}
