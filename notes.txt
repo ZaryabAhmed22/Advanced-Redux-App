@@ -20,3 +20,7 @@
 - PREFER reducers and AVOID Action Creators or Components in case of synchronous side effect free code.
 
 - PREFER Action Creators and Components and AVOID reducers in case of asynchronous code and code with side effects.
+
+- To send http requests, select a completely different file e.g App.js. Import the whole data that we wnat to send to the backend, and PUT/POST that data inside the useEffect() using the fetch API.
+
+- LOGIC: What we did is, we changed the order. We first transformedour data in redux, and then sent it to the backend.
