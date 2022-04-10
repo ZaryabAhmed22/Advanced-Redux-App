@@ -1,0 +1,22 @@
+>> ASYNC CODE
+- Necer run any fetch request of asynchronous code in our reducers.
+
+- There are 2 main options to run async code
+1. Inside the components
+2. Inside the action creators.
+
+>> BACKEND VS FRONTEND
+- When we have a backend API of our choice, we just have to send the data where it will be transformed in desired format.
+- But in our case, we have a dummy backend which doesn't have much logic, it just stores data, so we have to transform data in the frontend first and then dispatch the data
+
+>> WHERE TO PUT OUR CODE
+- There are three options.
+1. Fat Reducers.
+2. Fat Components.
+3. Fat Actions
+
+- First differenciate between sunchronous and side-effect free code (i.e data transformations) and Async code or code with side effects.
+
+- PREFER reducers and AVOID Action Creators or Components in case of synchronous side effect free code.
+
+- PREFER Action Creators and Components and AVOID reducers in case of asynchronous code and code with side effects.
