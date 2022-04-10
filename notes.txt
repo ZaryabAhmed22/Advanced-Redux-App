@@ -24,3 +24,13 @@
 - To send http requests, select a completely different file e.g App.js. Import the whole data that we wnat to send to the backend, and PUT/POST that data inside the useEffect() using the fetch API.
 
 - LOGIC: What we did is, we changed the order. We first transformedour data in redux, and then sent it to the backend.
+
+>> A PROBLEM WITH THE useEffect()
+
+We face one problem when using useEffect the way we currently do it: It will execute when our app starts.
+
+Why is this an issue?
+
+It's a problem because this will send the initial (i.e. empty) cart to our backend and overwrite any data stored there.
+
+We'll fix this over the next lectures, I just wanted to point it out here!
