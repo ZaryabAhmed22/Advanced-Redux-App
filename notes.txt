@@ -40,3 +40,10 @@ Solution: set a varible outside the component and set it to true. on the very be
 >> ACTION CREATOR THUNK
 Q: What is a thunk?
 A: A thunk is a function that delays an action until later, until something else finishes. We can use the thunk to create an action creator that does NOT return the action itself but another function which eventually return the action.
+
+- We create action creatore in any slice file or a seperate file, create whole logic in the action creator adnthen call the that creator from any component. 
+
+>> REDUX TOOLKIT
+- Somtimes we have to look our state at different levels.
+- Simply add redux dev tools from google as an extension.
+- Open the extension from the googgle extension.
