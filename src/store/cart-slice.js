@@ -4,19 +4,25 @@ import { uiActions } from "./ui-slice";
 const initialCartState = {
   items: [],
   totalQty: 0,
+  changed: false, //>> to avoid sending the request on the page reload
   // totalAmount: 0,
 };
 const cartSlice = createSlice({
   name: "cart",
   initialState: initialCartState,
   reducers: {
+    replaceCart(state, action) {
+      state.items = action.payload.items;
+      state.totalQty = action.payload.totalQty;
+    },
+
     addItemToCart(state, action) {
       const newItem = action.payload;
       const existingItem = state.items.find((item) => item.id === newItem.id);
 
       //Updating total quantity
       state.totalQty++;
-
+      state.changed = true;
       //Adding item to the items array
       if (!existingItem) {
         state.items.push({
@@ -37,6 +43,7 @@ const cartSlice = createSlice({
       console.log(state.items, existingItem);
       //Updating total quantity
       state.totalQty--;
+      state.changed = true;
       //
       if (existingItem.quantity === 1) {
         state.items = state.items.filter((item) => item.id !== id);
