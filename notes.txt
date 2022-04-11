@@ -34,3 +34,9 @@ Why is this an issue?
 It's a problem because this will send the initial (i.e. empty) cart to our backend and overwrite any data stored there.
 
 We'll fix this over the next lectures, I just wanted to point it out here!
+
+Solution: set a varible outside the component and set it to true. on the very begining of then useEffect, set an if else block to check if it's true, set it to false.
+
+>> ACTION CREATOR THUNK
+Q: What is a thunk?
+A: A thunk is a function that delays an action until later, until something else finishes. We can use the thunk to create an action creator that does NOT return the action itself but another function which eventually return the action.
