@@ -4,9 +4,7 @@ import Cart from "./components/Cart/Cart";
 import Layout from "./components/Layout/Layout";
 import Products from "./components/Shop/Products";
 import Notification from "./components/UI/Notification";
-import { sendCartData } from "./store/cart-slice";
-import { uiActions } from "./store/redux-index";
-
+import { sendCartData } from "./store/cart-actions";
 //Using this variable to avoid the Effect to run immidiately after the page reload and avoid sending an empty cart.
 let isInitial = true;
 
